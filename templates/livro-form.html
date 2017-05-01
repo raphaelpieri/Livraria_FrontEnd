@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        <form name="livroForm" novalidate ng-submit="salvar(livro)">
+        <div class="form-group">
+            <label for="">Titulo</label>
+            <input type="text" class="form-control" id="" name="title" ng-model="livro.title" placeholder="Titulo" required>
+            <span style="color: red" ng-if="livroForm.title.$invalid && livroForm.title.$dirty">Campo obrigatorio</span>
+        </div>
+        <div class="form-group">
+            <label for="">Editora</label>
+            <input type="text" class="form-control" id="" name="publishingCompany" ng-model="livro.publishingCompany" placeholder="Editora" required>
+            <span style="color: red" ng-if="livroForm.publishingCompany.$invalid && livroForm.publishingCompany.$dirty">Campo obrigatorio</span>
+        </div>
+        <div class="form-group">
+            <label for="">Autor</label>
+            <input type="text" class="form-control" id="" name="author" ng-model="livro.author" placeholder="Autor" required>
+            <span style="color: red" ng-if="livroForm.author.$invalid && livroForm.author.$dirty">Campo obrigatorio</span>
+        </div>
+        <div class="form-group">
+            <label for="">Paginas</label>
+            <input type="number" class="form-control" id="" name="page" ng-model="livro.page" placeholder="Paginas" required>
+            <span style="color: red" ng-if="livroForm.page.$invalid && livroForm.page.$dirty">Campo obrigatorio</span>
+        </div>
+        <div class="form-group">
+            <label for="">Preço</label>
+            <input type="number" class="form-control" id="" name="value" ng-model="livro.value" placeholder="Preço" required>
+            <span style="color: red" ng-if="livroForm.value.$invalid && livroForm.value.$dirty">Campo obrigatorio</span>
+        </div>
+        <div class="form-group">
+            <label for="">Quantidade</label>
+            <input type="number" class="form-control" id="" name="quantityOnHand" ng-model="livro.quantityOnHand" placeholder="Quantidade" required>
+            <span style="color: red" ng-if="livroForm.quantityOnHand.$invalid && livroForm.quantityOnHand.$dirty">Campo obrigatorio</span>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-disabled="livroForm.$invalid" >Salvar</button>
+        </form>
+    </div>
+</div>

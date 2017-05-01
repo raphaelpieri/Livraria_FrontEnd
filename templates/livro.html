@@ -1,0 +1,41 @@
+<div>
+    <h2>Livros</h2>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="input-group">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Buscar!</button>
+        </span>
+        <input type="text" class="form-control" ng-model="model" placeholder="Buscar livros...">
+    </div>
+    </div>
+     <div class="col-md-6 text-right">
+        <a class="btn btn-success" href="#/livro/cadastrar" role="button">Novo</a>
+    </div>
+</div>
+<br />
+<div class="table-responsive">
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Editora</th>
+        <th>Author</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in listaDeLivros | filter:model">
+        <td>{{p.title}}</td>
+        <td>{{p.publishingCompany}}</td>
+        <td>{{p.author}}</td>
+        <td>{{p.value}}</td>
+         <td>
+             <a class="btn btn-info" href="#/livro/{{p.id}}/editar" role="button">Editar</a>
+             <a class="btn btn-danger" href="javascript:void(0);" ng-click="remover(p.id)" role="button">Remover</a>
+         </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
